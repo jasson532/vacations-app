@@ -1,0 +1,21 @@
+<script type="text/jsx">
+	const FormStepTwo = ({setStep}) => {
+
+		const handleOnChange = date => {
+			console.log({date})
+			console.log(date[0]._d)
+			console.log(date[1]._d)
+			setStep(2)
+		}
+
+		return (<div className="form-container">
+			<RangePicker
+				onChange={handleOnChange}
+				
+			/>
+			<br />
+			<br />
+			<Button type="primary" htmlType="submit">Siguiente</Button>
+		</div>
+	)}
+</script>

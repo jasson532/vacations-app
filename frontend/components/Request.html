@@ -1,0 +1,31 @@
+<script type="text/jsx">
+	const RequestContext = React.createContext({})
+
+	const Request = () => {
+		
+		const [step, setStep] = useState(0)
+		const [dataRequest, setDataRequest] = useState({})
+
+		return (
+			<RequestContext.Provider value={dataRequest}>
+				<div>
+				<StepRequest {...{step}} />
+				<Tabs tabPosition='bottom' animated={true} activeKey={`item-${step}`}>
+					<Tabs.TabPane tab="datos personales" key="item-0">
+						<FormStepOne {...{setStep}} />
+					</Tabs.TabPane>
+					<Tabs.TabPane tab="Periodo de vacaciones" key="item-1">
+						<FormStepTwo {...{setStep}} />
+					</Tabs.TabPane>
+					<Tabs.TabPane tab="Jefe Inmediato" key="item-2">
+						<FormStepThree {...{setStep}} />
+					</Tabs.TabPane>
+					<Tabs.TabPane tab="Terminar" key="item-3">
+						<FormRequest />
+					</Tabs.TabPane>
+				</Tabs>
+			</div>
+		</RequestContext.Provider>)
+	}
+
+</script>

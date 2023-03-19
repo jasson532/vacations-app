@@ -1,0 +1,49 @@
+<script type="text/jsx">
+	const FormStepThree = ({setStep}) => {
+		
+		const onFinish = (values: any) => {
+			console.log('Finish:', values)
+			setStep(3)
+		}
+
+		return (<div className="form-container">
+			<Row gutter={50}>
+				<Col xs={24} md={12}>
+					<Form
+						name="basic"
+						labelCol={{ span: 8 }}
+						wrapperCol={{ span: 16 }}
+						onFinish={onFinish}
+						>
+						<Form.Item
+							label="Motivo de vacaciones"
+							name="typeRequest"
+							rules={[{ required: true, message: 'Este campo es requerido!' }]}
+						>
+							<Select>
+								<Option value="Vacaciones">Vacaciones</Option>
+								<Option value="Día de la familia">Día de la familia</Option>
+								<Option value="Calamidad Domestica">Calamidad Domestica</Option>
+							</Select>
+						</Form.Item>
+
+						<Form.Item
+							label="Jefe inmediato"
+							name="boss"
+							rules={[{ required: true, message: 'Este campo es requerido!' }]}
+						>
+							<Select>
+								<Option value="Jefe 1">Jefe 1</Option>
+								<Option value="Jefe 2">Jefe 2</Option>
+							</Select>
+						</Form.Item>
+
+						<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+							<Button type="primary" htmlType="submit">Siguiente</Button>
+						</Form.Item>
+					</Form>
+				</Col>
+			</Row>
+		</div>
+	)}
+</script>

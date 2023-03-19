@@ -1,0 +1,56 @@
+<script type="text/jsx">
+	const FormStepOne = ({setStep}) => {
+		console.log({setStep})
+		const [form] = Form.useForm();
+		const dataRequest = useContext(RequestContext);
+		
+		const onFinish = (values: any) => {
+			console.log('Finish:', values)
+			dataRequest.infoUser = values
+			console.log({dataRequest})
+			setStep(1)
+		}
+
+		return (<div className="form-container">
+			<Row gutter={50}>
+				<Col xs={24} md={24}>
+					<Form
+						name="basic"
+						form={form}
+						labelCol={{ span: 8 }}
+						wrapperCol={{ span: 16 }}
+						onFinish={onFinish}
+						>
+						<Form.Item
+							label="Cédula"
+							name="userId"
+							rules={[{ required: true, message: 'Este campo es requerido!' }]}
+						>
+							<Input />
+						</Form.Item>
+
+						<Form.Item
+							label="Nombre"
+							name="userName"
+							rules={[{ required: true, message: 'Este campo es requerido!' }]}
+						>
+							<Input />
+						</Form.Item>
+
+						<Form.Item
+							label="Apellidos"
+							name="lastName"
+							rules={[{ required: true, message: 'Este campo es requerido!' }]}
+						>
+							<Input />
+						</Form.Item>
+
+						<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+							<Button type="primary" htmlType="submit">Siguiente</Button>
+						</Form.Item>
+					</Form>
+				</Col>
+			</Row>
+		</div>
+	)}
+</script>
