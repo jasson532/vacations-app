@@ -1,13 +1,10 @@
 <script type="text/jsx">
 	const FormStepOne = ({setStep}) => {
-		console.log({setStep})
 		const [form] = Form.useForm();
 		const dataRequest = useContext(RequestContext);
 		
 		const onFinish = (values: any) => {
-			console.log('Finish:', values)
 			dataRequest.infoUser = values
-			console.log({dataRequest})
 			setStep(1)
 		}
 

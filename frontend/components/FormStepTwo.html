@@ -1,21 +1,31 @@
 <script type="text/jsx">
 	const FormStepTwo = ({setStep}) => {
+		const dataRequest = useContext(RequestContext)
 
 		const handleOnChange = date => {
-			console.log({date})
-			console.log(date[0]._d)
-			console.log(date[1]._d)
-			setStep(2)
+			const startDate = date[0]._d
+			const finishDate = date[0]._d
+			dataRequest.period = {
+				startDate: `${startDate.getFullYear()}/${startDate.getMonth()}/${startDate.getDate()}`,
+				finishDate: `${finishDate.getFullYear()}/${finishDate.getMonth()}/${finishDate.getDate()}`
+			}
 		}
 
 		return (<div className="form-container">
-			<RangePicker
-				onChange={handleOnChange}
-				
-			/>
-			<br />
-			<br />
-			<Button type="primary" htmlType="submit">Siguiente</Button>
+			<Row gutter={20}>
+				<Col xs={24} md={24}>
+					<RangePicker
+						className="range-picker"
+						onChange={handleOnChange}
+					/>
+				</Col>
+				<Col xs={12} md={12}>
+					<Button type="danger" onClick={() => setStep(0)}>Atras</Button>
+				</Col>
+				<Col xs={12} md={12}>
+					<Button type="primary" onClick={() => setStep(2)}>Siguiente</Button>
+				</Col>
+			</Row>
 		</div>
 	)}
 </script>

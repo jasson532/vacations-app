@@ -1,0 +1,23 @@
+<script type="text/jsx">
+	const FormStepFour = ({setStep}) => {
+		const dataRequest = useContext(RequestContext);
+		
+		const handleRegisterRequest = () => {
+			const onSuccess = () => {
+				console.log('se realizó el registro')
+			}
+			google.script.run.withSuccessHandler(onSuccess).registerRequest(dataRequest);
+		}
+
+		return (<div className="form-container">
+			<Row gutter={100}>
+				<Col xs={12} md={12}>
+					<Button type="danger" onClick={() => setStep(2)}>Atras</Button>
+				</Col>
+				<Col xs={12} md={12}>
+					<Button type="primary" onClick={handleRegisterRequest}>Enviar</Button>
+				</Col>
+			</Row>
+		</div>
+	)}
+</script>

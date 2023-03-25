@@ -1,8 +1,9 @@
 <script type="text/jsx">
 	const FormStepThree = ({setStep}) => {
+		const dataRequest = useContext(RequestContext)
 		
 		const onFinish = (values: any) => {
-			console.log('Finish:', values)
+			dataRequest.typeRequest = values
 			setStep(3)
 		}
 
@@ -39,7 +40,14 @@
 						</Form.Item>
 
 						<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-							<Button type="primary" htmlType="submit">Siguiente</Button>
+							<Row gutter={100}>
+								<Col xs={12} md={12}>
+									<Button type="danger" onClick={() => setStep(1)}>Atras</Button>
+								</Col>
+								<Col xs={12} md={12}>
+									<Button type="primary" htmlType="submit">Siguiente</Button>
+								</Col>
+							</Row>
 						</Form.Item>
 					</Form>
 				</Col>

@@ -3,9 +3,20 @@
 
 		render() {
 			return (
-				<div style={{ padding: 100 }}>
-					<Request />	
-				</div>
+				<Layout theme="light" style={{padding: '1rem 3rem 1rem', background: '#fafafa'}}>
+          <BrowserRouter>
+            <NavRoute />
+            <Switch>
+              <Route exact path="/">
+                <Request />
+              </Route>
+              <Route path="/lista">
+                <FormStepThree />
+              </Route>
+							<Redirect to="/" />
+            </Switch>
+          </BrowserRouter>
+				</Layout>
 			)
 		}
 	}

@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#000000">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.19.2/antd.min.css" integrity="sha512-dS7oWcTvXxUsvKT7uP8ZTPAmTk+AN8uuJy4n21XT0/+q9papCVCRy/9K3R2Qr8242PEYx5DvWCH9MbMzwBgdGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@5.3.0/umd/react-router-dom.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.19.2/antd.min.js"></script>
@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/zh-cn.min.js" integrity="sha512-j83eLbbs+KVKlv8KI6i2lWPlLGY1nltBDnWXIMedQYYjhd5sfifdJB6f2Wxdli5mfrNqRbESVpqSXDHhzMREGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.19.3/antd-with-locales.min.js" integrity="sha512-b6u38I6lG2Ca19xUTyeMah/Y+OyxjibqvVqjZF4UyJNeS/yqUjiaAXTplLf3VWKMohnfCiAnWpu/WbTQuJxvow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
   </head>
   <body>
     <div id="root"></div>
@@ -23,6 +24,7 @@
 
   <!-- components -->
   <?!= include('components/Init') ?>
+  <?!= include('frontend/components/NavRoute') ?>
   <?!= include('frontend/components/CardTest') ?>
   <?!= include('frontend/components/FormRequest') ?>
   <?!= include('frontend/components/StepRequest') ?>
@@ -30,6 +32,7 @@
   <?!= include('frontend/components/FormStepOne') ?>
   <?!= include('frontend/components/FormStepTwo') ?>
   <?!= include('frontend/components/FormStepThree') ?>
+  <?!= include('frontend/components/FormStepFour') ?>
 
   <!-- global -->
   <?!= include('globalCSS') ?>
